@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-
   <title>Maps for days</title>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= @body_class %>">
+
+<div id="prlx_1"></div>
+<div id="content_layer"> Hello World </div>
+
 
   <div id="menu" class="navbar navbar-default">
   <nav class="navbar navbar-default">
@@ -26,7 +30,6 @@
           <li><%= link_to "#{current_user.username}",  class: "nav-bar" %></li>
           <li><%= link_to "Sign Out", sign_out_path %></li>
     <% else %>
-          <li><%= link_to "Sign In", sign_in_path %></li>
           <li><%= link_to "Sign Up", sign_up_path %></li>
       <% end %>
          </li>
@@ -49,7 +52,6 @@
           <%= flash[:error] %>
         </div>
       <% end %>
-
 
 
     <!-- </div> -->

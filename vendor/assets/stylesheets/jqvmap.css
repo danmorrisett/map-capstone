@@ -44,3 +44,13 @@
   width: 100%;
   height: 500px;
 }
+
+body{ margin:0px; background:url(r_oh_yes.gif) fixed;}
+#prlx_1yr_1 {
+  position:fixed;
+  background: url(parallax_r_oh_yes.gif) no-repeat 0px 200px;
+  width: 100%;
+  height: 800px;
+}
+
+#content_layer{ position:absolute; }
