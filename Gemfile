@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'faraday', '~> 0.9.0'
 
+gem 'tweetstream'
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
@@ -32,6 +35,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'omniauth-twitter'
 
+gem 'dotenv-rails', '~> 2.0.1'
 
 
 # Use Unicorn as the app server

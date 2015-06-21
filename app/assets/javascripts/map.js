@@ -1,6 +1,7 @@
 $(document).ready(function() {
   function parallax(){
     var prlx_1yr_1 = document.getElement
+    prlx_1yr_1.style.top = -(window.pageYOffset / 4)+'px';
   }
   window.addEventListener("scroll", parallax, false);
 
@@ -23,14 +24,21 @@ $(document).ready(function() {
     showTooltip: true,
     onRegionClick: function(element, code, region)
     {
-
       $("#myModal").modal("show");
+      $.ajax({
+        url: "http://localhost:3000/",
+        success: function(data){
+        console.log(data);
+        }
+      })
+      //send ajax request to a controller that fetches tweets that the selected state. Save tweets to the database, associate states to tweets
+      // console.log(region)
       //  var message = 'You clicked "'
       //      + region
       //      + '" which has the code: '
       //      + code.toUpperCase();
        //
       //  alert(message);
-    }
-  	});
+    } //closes on region click function
+  	}); //closes jQuery call
 });
