@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     get 'auth/twitter/callback', to: 'sessions#create'
     get 'signout', to: 'sessions#destroy', as: 'signout'
     get 'auth/failure', to: redirect('/')
-    
+    post 'index', to: 'welcome#index'
+
+
   resources :maps
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
