@@ -43,15 +43,18 @@
 <div id="information" class="pad-section">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-offset-3 col-sm-6">
         <div class="panel panel-default">
-          <div class="panel-heading">
-            <h2 class="panel-title">Hello Test</h2>
-          </div>
           <div class="panel-body lead">
 
           <p>
-              Welcome
+              Welcome, feel free to sign in with Twitter.
+              <br>
+
+              Click On states to see trending tweets of that state.
+              <br>
+
+              Enjoy
           </p>
 
           </div>
@@ -76,6 +79,25 @@
 
 
 <%= yield %>
+
+  <div class="container">
+    
+    <footer>
+
+      <hr></hr>
+
+      <div class = "row">
+
+        <div class = "col-md-8 text-right">
+          <%= link_to image_tag('link.jpg', class: "footer_icon"), "https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile" %>
+          <%= link_to image_tag('GitHub.png', class: "footer_icon"), "https://github.com/danmorrisett" %>
+          <%= link_to image_tag('Twitter.png', class: "footer_icon"), "https://twitter.com/@Dan_Morrisett" %>
+          <%= link_to image_tag('galvanize.png', class: "footer_icon"), "https://students.gschool.it/students/277" %>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
 
 
 </body>

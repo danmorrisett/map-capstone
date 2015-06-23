@@ -9,7 +9,7 @@ $(document).ready(function() {
 
   jQuery('#vmap').vectorMap({
     map: 'usa_en',
-    backgroundColor: '#a5bfdd',
+    backgroundColor: '',
     borderColor: '#818181',
     borderOpacity: 0.25,
     borderWidth: 1,
@@ -25,6 +25,8 @@ $(document).ready(function() {
     onRegionClick: function(element, code, region)
     {
       $("#myModal").modal("show");
+
+      {code}
       // $.ajax({
       $.post("/index")
       //   url: "http://localhost:3000/", whatever route on my server that sends a request to twitter I create for this purpose of onclick region will be used to send params over
