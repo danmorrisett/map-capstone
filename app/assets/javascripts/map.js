@@ -14,7 +14,7 @@ $(document).ready(function() {
     backgroundColor: '',
     borderColor: '#818181',
     borderOpacity: 0.25,
-    borderWidth: 10,
+    borderWidth: 1,
     color: '#f4f3f0',
     enableZoom: true,
     hoverColor: '#c9dfaf',
@@ -29,18 +29,44 @@ $(document).ready(function() {
     {
       // we defined variable state above, here we are setting its value to the clicked region.
       // below is an ajax call - we want to pass the state variable to the states controller as params
-      // and use it as the hashtag keyword to get tweets for the clicked state.
-      $("#myModal").modal("show");
-      state = region;
+      // and use it as the hashtag keyword to get tweets for each state.
+      var tweetInfo = '<h1>cool tweet</h1>'
+      var modalInfo = '<div class="model-body>'+tweetInfo+'</div>"';
+      // <div class="modal-body">
+
+        // <h1><%= @statuses[0] %></h1>
+        // <% @statuses.each do |status| %>
+        //   <br><b><li> <%= status %></li></b><br>
+        // <% end %>
+<!--
+        // <a class="twitter-share-button"
+        // href="https://twitter.com/intent/tweet"><br>
+        // TWEET </a> -->
+        //
+        // <div class = "row">
+        //     <%= link_to image_tag('Twitter.png', class: "footer_icon"), "https://twitter.com/intent/tweet" %>
+        // </div>
+
+
+        // <div class = 'button'><!-- <div class="modal-footer"> -->
+        // <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      // </div>
+      var state = region;
       console.log(state);
 
-      // $.ajax({
-      // $.post("/index")
-      //   url: "http://localhost:3000/", whatever route on my server that sends a request to twitter I create for this purpose of onclick region will be used to send params over
-      //   success: function(data){  start with route, parse params plug that into the tweet client search
-      //   console.log(data);
-      //   }
-      // })
+      $.ajax({
+        url: "/",
+        type: "get",
+        data: {state: state},
+        dataType: "json",
+        // whatever route on my server that sends a request to twitter I create for this purpose of onclick region will be used to send params over
+        success: function(data){
+          console.log(data)
+          $('.status-one').text(data[0]);
+          $("#myModal").modal("show");
+          // start with route, parse params plug that into the tweet client search
+        }
+      })
       //send ajax request to a controller that fetches tweets that the selected state. Save tweets to the database, associate states to tweets
       // console.log(region)
       //  var message = 'You clicked "'
