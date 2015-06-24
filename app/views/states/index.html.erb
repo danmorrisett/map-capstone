@@ -1,0 +1,33 @@
+<% @body_class="auth-page" %>
+
+
+<div id="vmap"></div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+
+        <h1><%= @statuses[0] %></h1>
+        <% @statuses.each do |status| %>
+          <br><b><li> <%= status %></li></b><br>
+        <% end %>
+<!--
+        <a class="twitter-share-button"
+        href="https://twitter.com/intent/tweet"><br>
+        TWEET </a> -->
+
+        <div class = "row">
+            <%= link_to image_tag('Twitter.png', class: "footer_icon"), "https://twitter.com/intent/tweet" %>
+        </div>
+
+
+        <div class = 'button'><!-- <div class="modal-footer"> -->
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <button id "ajax-get"> Submit</button> -->

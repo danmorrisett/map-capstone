@@ -26,7 +26,7 @@
 }
 
 .auth-page {
- background-image: image-url("earth1.jpeg");
+ background-image: image-url("map-app1.jpeg");
  background-repeat: repeat;
  background-size: auto;
  background-color: black;
@@ -34,4 +34,19 @@
 
 .footer_icon {
   height: 36px;
+}
+
+.row {
+  float: right;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.button {
+  margin-top: 15px;
+}
+
+.header {
+  float: right;
+
 }

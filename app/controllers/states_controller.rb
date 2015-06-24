@@ -1,10 +1,10 @@
-class WelcomeController < ApplicationController
+class StatesController < ApplicationController
 
   def index
       @statuses = []
-      TweetStream::Client.new.track('#camping', '#colorado') do |status, client|
+      TweetStream::Client.new.track('css') do |status, client|
         @statuses << status.text
-        client.stop if @statuses.length >= 1
+        client.stop if @statuses.length >= 3
         # how rails handles a ajax request, how do i see the region, handle arguments that are past through
         # render :json => @statuses
       end

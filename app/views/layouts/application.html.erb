@@ -24,10 +24,24 @@
     <ul>
     </div>
 
+
+
     <% if current_user %>
+        <br>
+
+      <h1 class= 'header'>
+        Click on a state to see trending tweets of that state.  Enjoy!
+      </h1>
+
       <br>Signed in as <%= current_user.name %>
       <%= link_to "Sign Out", signout_path %></br>
       <% else %>
+          Welcome, feel free to sign in with Twitter.
+          <br>
+          Click On states to see trending tweets of that state.
+          <br>
+          Enjoy
+
       <li><%= link_to "Sign In with Twitter", '/auth/twitter', class: "btn btn-info" %></li>
       <% end %>
        </li>
@@ -80,24 +94,7 @@
 
 <%= yield %>
 
-  <div class="container">
-    
-    <footer>
 
-      <hr></hr>
-
-      <div class = "row">
-
-        <div class = "col-md-8 text-right">
-          <%= link_to image_tag('link.jpg', class: "footer_icon"), "https://www.linkedin.com/profile/public-profile-settings?trk=prof-edit-edit-public_profile" %>
-          <%= link_to image_tag('GitHub.png', class: "footer_icon"), "https://github.com/danmorrisett" %>
-          <%= link_to image_tag('Twitter.png', class: "footer_icon"), "https://twitter.com/@Dan_Morrisett" %>
-          <%= link_to image_tag('galvanize.png', class: "footer_icon"), "https://students.gschool.it/students/277" %>
-        </div>
-      </div>
-    </footer>
-  </div>
-</div>
 
 
 </body>
