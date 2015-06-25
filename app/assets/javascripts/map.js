@@ -53,20 +53,31 @@ $(document).ready(function() {
       // </div>
       var state = region;
       console.log(state);
+      if (localStorage[state]){
+        $('.status-one').text(JSON.parse(localStorage[state])[0]);
+        $('.status-two').text(JSON.parse(localStorage[state])[1]);
+        $('.status-three').text(JSON.parse(localStorage[state])[2]);
+        $("#myModal").modal("show");
+      } else {
+        $.ajax({
+          url: "/",
+          type: "get",
+          data: {state: state},
+          dataType: "json",
+          // whatever route on my server that sends a request to twitter I create for this purpose of onclick region will be used to send params over
+          success: function(data){
+            console.log(data)
+            localStorage.setItem(state, JSON.stringify(data))
 
-      $.ajax({
-        url: "/",
-        type: "get",
-        data: {state: state},
-        dataType: "json",
-        // whatever route on my server that sends a request to twitter I create for this purpose of onclick region will be used to send params over
-        success: function(data){
-          console.log(data)
-          $('.status-one').text(data[0]);
-          $("#myModal").modal("show");
-          // start with route, parse params plug that into the tweet client search
-        }
-      })
+            $('.status-one').text(data[0]);
+            $('.status-two').text(data[1]);
+            $('.status-three').text(data[2]);
+
+            $("#myModal").modal("show");
+            // start with route, parse params plug that into the tweet client search
+          }
+        })
+      }
       //send ajax request to a controller that fetches tweets that the selected state. Save tweets to the database, associate states to tweets
       // console.log(region)
       //  var message = 'You clicked "'

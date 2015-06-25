@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Maps for days</title>
+  <title>Trending USA</title>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -21,81 +21,67 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-    <ul>
     </div>
 
-
-
-    <% if current_user %>
+    <ul class= 'ul'>
+      <% if current_user %>
         <br>
-
       <h1 class= 'header'>
-        Click on a state to see trending tweets of that state.  Enjoy!
+        Click on a state to see trending tweets of that state
       </h1>
-
-      <br>Signed in as <%= current_user.name %>
-      <%= link_to "Sign Out", signout_path %></br>
-      <% else %>
-          Welcome, feel free to sign in with Twitter.
-          <br>
-          Click On states to see trending tweets of that state.
-          <br>
-          Enjoy
-
-      <li><%= link_to "Sign In with Twitter", '/auth/twitter', class: "btn btn-info" %></li>
-      <% end %>
-       </li>
-     </ul>
-   </div>
-
-</nav>
-
-</div>
-
-</div>
-
-<div id="information" class="pad-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-offset-3 col-sm-6">
-        <div class="panel panel-default">
-          <div class="panel-body lead">
-
-          <p>
-              Welcome, feel free to sign in with Twitter.
-              <br>
-
-              Click On states to see trending tweets of that state.
-              <br>
-
-              Enjoy
-          </p>
-
-          </div>
-        </div>
+      <p>
+      Signed in as <%= current_user.name %>
+     </p>
+      <div class='out'>
+        <%= link_to "Sign Out", signout_path %>
       </div>
+      <% else %>
+      <div class="container">
+        <!-- <div class="col-sm-offset-3 col-sm-3"> -->
+          <div class='center-text'>
+            <br>
+            <h3>Welcome to Trending USA, feel free to sign in with Twitter.</h3>
+          <br>
+          <p>
+            Click On states to see trending tweets of that state.
+            <br />
+            Enjoy
+          </p>
+          <br>
+          </div>
+        <!-- </div> -->
+      </div>
+    </ul>
+    <div class='out'>
+      <%= link_to "Sign In with Twitter", '/auth/twitter', class: "btn btn-info" %>
+    </div>
+      <% end %>
+  </div>
+  </nav>
+</div>
+
+<div style="height: 140px">
+  <p>
+  Click on a state to see trending tweets of that state
+  </p>
 </div>
 
 
-  <div class="container">
-      <% if flash[:notice] %>
-        <div class="alert alert-success", role="alert">
-          <%= flash[:notice] %>
-        </div>
-      <% end %>
+<div class="container">
+  <% if flash[:notice] %>
+    <div class="alert alert-success", role="alert">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
 
-      <% if flash[:error] %>
-        <div class="alert alert-danger", role="alert">
-          <%= flash[:error] %>
-        </div>
-      <% end %>
-
-
+  <% if flash[:error] %>
+    <div class="alert alert-danger", role="alert">
+      <%= flash[:error] %>
+    </div>
+  <% end %>
+</div>
 
 <%= yield %>
-
-
-
 
 </body>
 </html>

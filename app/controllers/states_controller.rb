@@ -6,7 +6,7 @@ class StatesController < ApplicationController
     if params[:state]
       TweetStream::Client.new.track(params[:state]) do |status, client|
         @statuses << status.text
-        client.stop if @statuses.length >= 1
+        client.stop if @statuses.length >= 3
 
         # pass the state name
         # to the controller
