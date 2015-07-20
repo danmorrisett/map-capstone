@@ -34,19 +34,6 @@ $(document).ready(function() {
       var modalInfo = '<div class="model-body>'+tweetInfo+'</div>"';
       // <div class="modal-body">
 
-        // <h1><%= @statuses[0] %></h1>
-        // <% @statuses.each do |status| %>
-        //   <br><b><li> <%= status %></li></b><br>
-        // <% end %>
-<!--
-        // <a class="twitter-share-button"
-        // href="https://twitter.com/intent/tweet"><br>
-        // TWEET </a> -->
-        //
-        // <div class = "row">
-        //     <%= link_to image_tag('Twitter.png', class: "footer_icon"), "https://twitter.com/intent/tweet" %>
-        // </div>
-
 
         // <div class = 'button'><!-- <div class="modal-footer"> -->
         // <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -78,13 +65,7 @@ $(document).ready(function() {
           }
         })
       }
-      //send ajax request to a controller that fetches tweets that the selected state. Save tweets to the database, associate states to tweets
-      // console.log(region)
-      //  var message = 'You clicked "'
-      //      + region
-      //      + '" which has the code: '
-      //      + code.toUpperCase();
-
+    
       //  alert(message);
     } //closes on region click function
   }); //closes jQuery call
